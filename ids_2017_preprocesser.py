@@ -14,7 +14,8 @@ import sys
 
 def readData(path, delimiter, decimal):
     "READ SINGLE FILE"
-    df=pd.read_csv(path, delimiter=delimiter, decimal=decimal, engine="c", header = 0)
+    df=pd.read_csv(path, delimiter=delimiter, decimal=decimal, engine="c")
+    #df=pd.read_csv(path, delimiter=delimiter, decimal=decimal, engine="c", header = 0, names=col_name)
     return df
 
 def check_good(value):
@@ -33,8 +34,8 @@ if __name__ == "__main__":
 
     # --- PARAMETERS ---
     # Tuesday , Wednesday, Thursday , Friday
-    dataset_path = "..."
-    output_path = "..."
+    dataset_path = sys.argv[1]
+    output_path = sys.argv[2]
 
     # other parameters
     delim = ","
@@ -54,7 +55,7 @@ if __name__ == "__main__":
     #PRINT CLASS DISTRIBUTION
     print(data["Label"].value_counts())
 
-    data["port_type"] = data["Destination_Port"].apply(port_category)
+    data["port_type"] = data["Destination Port"].apply(port_category)
 
     data["class"] = data["Label"].apply(check_good)
 
