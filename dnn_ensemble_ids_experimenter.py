@@ -1085,7 +1085,7 @@ if __name__ == "__main__":
     
     
     #chunk datasets for cicids 2017
-    data_path="../res/input/data_preprocessed_2/id_dataset_2017"
+    data_path="/home/gpu-union/network_ai/data/TrafficLabelling/preprocess"
     data_names=["Tuesday.csv","Wednesday.csv","Thursday.csv","Friday.csv"]
     predata_names=["Tuesday.pkl","Wednesday.pkl","Thursday.pkl","Friday.pkl"]
     
