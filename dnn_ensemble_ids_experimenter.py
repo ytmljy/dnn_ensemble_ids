@@ -25,7 +25,7 @@ except:
 
 #from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Lambda
-from keras.layers.normalization import BatchNormalization
+from tensorflow.keras.layers import BatchNormalization
 from keras.models import Sequential
 from keras.initializers import glorot_normal
 from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
@@ -36,9 +36,10 @@ import sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import auc
-from sklearn.metrics.classification import confusion_matrix, classification_report
-from sklearn.preprocessing.data import OneHotEncoder
-from sklearn.preprocessing.data import StandardScaler, Normalizer, minmax_scale,OneHotEncoder, MinMaxScaler, RobustScaler
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler, Normalizer, minmax_scale,OneHotEncoder, MinMaxScaler, RobustScaler
 from sklearn.pipeline import Pipeline
 
 from losses import *
@@ -50,8 +51,8 @@ import pickle as pk
 from collections import Counter
 
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble.weight_boosting import AdaBoostRegressor
-from sklearn.tree.tree import DecisionTreeRegressor
+from sklearn.ensemble import AdaBoostRegressor
+from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_curve
 
@@ -985,12 +986,14 @@ if __name__ == "__main__":
     np.random.seed(seed)
     #rn seed
     rn.seed(seed)
-    session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+    #session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+    session_conf = tf.compat.v1.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1,log_device_placement=True)
     #sess
-    sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+    #sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+    sess = tf.compat.v1.Session(config=session_conf)
     K.set_session(sess)
     #tf seed
-    tf.set_random_seed(seed)
+    tf.random.set_seed(seed)
     
     # --- PARAMETERS ---
     
