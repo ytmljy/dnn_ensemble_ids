@@ -1072,8 +1072,8 @@ if __name__ == "__main__":
 
     #FIXED PARAMETERs
     
-    model_folder_path = "../res/output/model/"
-    preprocesser_folder_path = "../res/output/preprocesser/"
+    model_folder_path = "/home/gpu-union/network_ai/data/TrafficLabelling/output/model"
+    preprocesser_folder_path = "/home/gpu-union/network_ai/data/TrafficLabelling/preprocess"
     #data_path="../res/input/data_preprocessed_2/disjoint_samples"
     
     #chunk datasets for iscx
