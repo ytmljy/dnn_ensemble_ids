@@ -303,6 +303,7 @@ def create_dictionary(dataset_paths, delim, decimal, load_from_file, preprocesse
 
         # CLEAN STRING
         #data["class"] = data["class"].apply(convert_string_to_float)
+        data = data.drop(['class'], 1)
 
         data_list.append(data)
         if debug:
