@@ -431,7 +431,7 @@ def extract_preprocessed_data(dataset_path, delim, decimal, train_perc, test_per
         indexes_to_encode.append(preprocessed_training.columns.get_loc(v))
 
 
-    print("--------->", preprocessed_training)
+    # print("--------->", preprocessed_training)
     preprocessed_training = x_ohe.preprocessed_training(preprocessed_training)
 
     if (debug) :
