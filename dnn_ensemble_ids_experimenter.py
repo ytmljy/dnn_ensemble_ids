@@ -335,7 +335,8 @@ def create_dictionary(dataset_paths, delim, decimal, load_from_file, preprocesse
     if debug :
         print("Features indexes: ", indexes_to_encode)
 
-    x_ohe = OneHotEncoder(categorical_features=indexes_to_encode, sparse=False)
+    # x_ohe = OneHotEncoder(categorical_features=indexes_to_encode, sparse=False)
+    x_ohe = OneHotEncoder(categories='auto', sparse=False)
 
     x_ohe.fit(data_list)
 
