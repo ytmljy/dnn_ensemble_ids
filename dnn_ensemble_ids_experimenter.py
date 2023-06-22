@@ -1107,7 +1107,7 @@ if __name__ == "__main__":
     
     #cicids categorical encoder and useless attributes
     enc_suffix = "extended_2017"
-    to_remove_list_parameter = ["Destination_Port","Flow_Bytes_s","Flow_Packets_s"]    
+    to_remove_list_parameter = ["Destination Port","Flow Bytes/s","Flow Packets/s"]    
     categorical_feature_list_parameter = ["port_type"]
 
     #Variables
