@@ -421,6 +421,7 @@ def extract_preprocessed_data(dataset_path, delim, decimal, train_perc, test_per
 
     #CREATE LABEL ENCODER
 
+    print(categorical_feature_list)
     # APPLY ENCODING
     for column_name in categorical_feature_list:
         current_encoder = column_dict[column_name]
