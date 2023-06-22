@@ -430,7 +430,9 @@ def extract_preprocessed_data(dataset_path, delim, decimal, train_perc, test_per
     for v in categorical_feature_list:
         indexes_to_encode.append(preprocessed_training.columns.get_loc(v))
 
-    preprocessed_training = x_ohe.transform(preprocessed_training)
+
+    print("--------->", preprocessed_training)
+    preprocessed_training = x_ohe.preprocessed_training(preprocessed_training)
 
     if (debug) :
         print("--- CATEGORICAL FEATURE ENCODED ---")
